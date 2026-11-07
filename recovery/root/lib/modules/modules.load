@@ -162,8 +162,8 @@ emi-mpu.ko
 mtk-mbox-mailbox.ko
 tinysys-scmi.ko
 irq-dbg.ko
-tran_fp_v2.ko
 tran_fp.ko
+tran_fp_v2.ko
 mtk-socinfo.ko
 mtk-afe-external.ko
 mtk-dvfsrc-helper.ko

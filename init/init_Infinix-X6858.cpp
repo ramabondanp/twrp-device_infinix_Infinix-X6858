@@ -20,8 +20,8 @@ void vendor_load_properties()
     string prop_partitions[] = {"", "system.", "vendor.", "odm."};
     for (const string &prop : prop_partitions)
     {
-        property_override(string("ro.product.") + prop + string("name"), "X6886-OP");
-        property_override(string("ro.product.") + prop + string("marketname"), "Infinix HOT 60 Pro+");
-        property_override(string("ro.product.") + prop + string("device"), "Infinix-X6886");
+        property_override(string("ro.product.") + prop + string("name"), "X6858-OP");
+        property_override(string("ro.product.") + prop + string("marketname"), "Infinix NOTE 50");
+        property_override(string("ro.product.") + prop + string("device"), "Infinix-X6858");
     }
 }
