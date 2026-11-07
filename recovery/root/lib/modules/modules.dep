@@ -22,17 +22,20 @@
 /lib/modules/rt5133-regulator.ko: /lib/modules/extdev_io_class.ko
 /lib/modules/mt6358-regulator.ko:
 /lib/modules/tc_tfcp_ta.ko: /lib/modules/tc_ta_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
+/lib/modules/leds_aw210xx.ko: /lib/modules/tran-led-core.ko
 /lib/modules/mmqos-common.ko: /lib/modules/mtk-mm-monitor-controller.ko /lib/modules/mm-monitor-platform-mt6789.ko /lib/modules/mtk-mmdvfs.ko /lib/modules/mmprofile.ko /lib/modules/mtk-icc-core.ko /lib/modules/mtk_dramc.ko /lib/modules/mtk-mmdvfs-debug.ko /lib/modules/mtk-dvfsrc.ko /lib/modules/mtk-smi-dbg.ko /lib/modules/emi.ko /lib/modules/emi-mpu.ko /lib/modules/mtk-smi.ko /lib/modules/log_store.ko /lib/modules/mrdump.ko /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/reset-ti-syscon.ko:
 /lib/modules/tc_hl7139a.ko: /lib/modules/tc_charger_class.ko
 /lib/modules/tc_adapter_class.ko:
 /lib/modules/tc_sc8548_charger.ko: /lib/modules/tc_charger_class.ko
 /lib/modules/mtk-pwm.ko:
+/lib/modules/tran_wireless_ta.ko: /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko
 /lib/modules/clk-mt6789.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/pinctrl-mtk-v2.ko:
 /lib/modules/tc_audio.ko: /lib/modules/tc_common_class.ko
 /lib/modules/tran_mmc_block.ko: /lib/modules/tran_block.ko /lib/modules/tran-ufshcd-core.ko /lib/modules/tran_scsi_mod.ko /lib/modules/tran_sd_mod.ko
 /lib/modules/tc_charger_class.ko:
+/lib/modules/tcpc_rt1711h.ko: /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko
 /lib/modules/tran_rhi.ko:
 /lib/modules/isee.ko: /lib/modules/bootprof.ko
 /lib/modules/device-apc-mt6789.ko: /lib/modules/device-apc-common.ko /lib/modules/log_store.ko /lib/modules/mrdump.ko /lib/modules/aee_aed.ko
@@ -41,6 +44,7 @@
 /lib/modules/clk-mt6789-vcodec.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/rm69220_fhdp_dsi_vdo_dsc_csot_csot_144hz_x6858.ko: /lib/modules/mtk_panel_ext.ko
 /lib/modules/mtk-socinfo.ko:
+/lib/modules/tran_wireless_manager.ko: /lib/modules/tc_charger_framework.ko /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/monitor_hang.ko: /lib/modules/mrdump.ko
 /lib/modules/mt6358_battery.ko: /lib/modules/pmic_lbat_service.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
 /lib/modules/mtk-afe-external.ko:
@@ -48,9 +52,9 @@
 /lib/modules/tran_key_bigdata.ko: /lib/modules/thd.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/pwm-mtk-disp.ko:
 /lib/modules/tran_usb_ctrl.ko: /lib/modules/tc_ta_class.ko /lib/modules/tc_charger_framework.ko /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko /lib/modules/transsion_tranlog.ko
+/lib/modules/tran_cps4021.ko: /lib/modules/tran_wireless_manager.ko /lib/modules/tc_charger_framework.ko /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/mtk-mmc-dbg.ko: /lib/modules/tran_mmc_block.ko /lib/modules/tran_block.ko /lib/modules/tran-ufshcd-core.ko /lib/modules/tran_scsi_mod.ko /lib/modules/tran_sd_mod.ko /lib/modules/blocktag.ko /lib/modules/pinctrl-mtk-common-v2_debug.ko /lib/modules/pinctrl-mtk-v2.ko /lib/modules/mrdump.ko
 /lib/modules/mtk-scpsys-bringup.ko:
-/lib/modules/tc_port_corrosion_prevention.ko: /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko
 /lib/modules/mtk-dvfsrc-helper.ko: /lib/modules/mtk_dramc.ko /lib/modules/mtk-mmdvfs-debug.ko /lib/modules/mtk-dvfsrc.ko /lib/modules/aee_aed.ko
 /lib/modules/clk-chk-mt6789.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/clk-mt6789-img.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
@@ -99,10 +103,12 @@
 /lib/modules/pidmap.ko:
 /lib/modules/tc_hvdcp20_algo.ko: /lib/modules/tc_charger_framework.ko /lib/modules/tc_tcpc.ko /lib/modules/tcpc_class.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/pd_dbg_info.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/syscon-reboot-mode.ko: /lib/modules/reboot-mode.ko
+/lib/modules/nfc_i2c.ko:
 /lib/modules/mtk-mm-monitor-controller.ko: /lib/modules/mm-monitor-platform-mt6789.ko /lib/modules/mtk-smi.ko /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/pmic_lbat_service.ko:
 /lib/modules/mtk-mmdebug-vcp-stub.ko:
 /lib/modules/mtk_irtx_pwm.ko: /lib/modules/mtk-pwm.ko
+/lib/modules/tran_charge_transfer.ko: /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
 /lib/modules/rm69220_fhdp_dsi_vdo_dsc_csot_csot_120hz_x6853.ko: /lib/modules/mtk_panel_ext.ko
 /lib/modules/aee_aed.ko:
 /lib/modules/teeperf.ko:
@@ -134,7 +140,6 @@
 /lib/modules/regulator-vibrator.ko:
 /lib/modules/tran_sd_mod.ko:
 /lib/modules/mtk-icc-core.ko:
-/lib/modules/tms_device_modules.ko:
 /lib/modules/transsion_tranlog.ko:
 /lib/modules/nvmem_mtk-devinfo.ko:
 /lib/modules/tc_misc_intf.ko: /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
@@ -157,6 +162,8 @@
 /lib/modules/tran_drm_panel_i2c.ko:
 /lib/modules/sec-rng.ko:
 /lib/modules/mm-monitor-platform-mt6789.ko:
+/lib/modules/mt6375-charger.ko: /lib/modules/tc_charger_class.ko
+/lib/modules/tran-led-core.ko:
 /lib/modules/tran-proc-bootdevice-mod.ko:
 /lib/modules/mtk_printk_ctrl.ko:
 /lib/modules/tran_expand_key.ko: /lib/modules/monitor_hang.ko /lib/modules/mrdump.ko
@@ -177,7 +184,6 @@
 /lib/modules/irq-dbg.ko:
 /lib/modules/tc_gauge.ko: /lib/modules/tc_auto_test.ko /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
 /lib/modules/clk-fmeter-mt6789.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
-/lib/modules/tc_phy_insert_det.ko: /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
 /lib/modules/mtk-dvfsrc-devfreq.ko: /lib/modules/mtk-dvfsrc.ko
 /lib/modules/pd-chk-mt6789.ko: /lib/modules/clk-chk-mt6789.ko /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/8250_mtk.ko: /lib/modules/mtk-uart-apdma.ko /lib/modules/irq-dbg.ko
@@ -212,6 +218,7 @@
 /lib/modules/bootprof.ko:
 /lib/modules/mtk_dramc.ko:
 /lib/modules/mtk-emi.ko: /lib/modules/mtk-dvfsrc.ko
+/lib/modules/tc_port_burning.ko: /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko /lib/modules/transsion_tranlog.ko
 /lib/modules/clk-mt6789-cam.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/clk-dbg-mt6789.ko: /lib/modules/clk-common.ko /lib/modules/aee_aed.ko
 /lib/modules/mtk-mmdvfs-debug.ko:
@@ -235,4 +242,4 @@
 /lib/modules/tc_sgm41516d.ko: /lib/modules/tc_misc_intf.ko /lib/modules/tc_adapter_class.ko /lib/modules/tc_charger_class.ko /lib/modules/tc_algorithm_class.ko /lib/modules/tc_common_class.ko /lib/modules/bootprof.ko
 /lib/modules/adaptive-ts.ko: /lib/modules/transsion_tranlog.ko /lib/modules/mtk_disp_notify.ko /lib/modules/thd.ko /lib/modules/opsMediator.ko
 /lib/modules/focaltech_ft3683g.ko: /lib/modules/transsion_tranlog.ko /lib/modules/adaptive-ts.ko
-/lib/modules/chipsemi_chsc5xxx_old.ko: /lib/modules/adaptive-ts.ko
+/lib/modules/gt9916_common.ko: /lib/modules/adaptive-ts.ko

@@ -40,7 +40,7 @@ fetch_mt6789_common_repo() {
 	fi
 }
 
-apply_X6886_patch() {
+apply_X6858_patch() {
 	local tree="$1"
 	local patch="$2"
 	if git -C "$tree" apply --reverse --check "$patch" >/dev/null 2>&1; then
@@ -54,7 +54,7 @@ apply_X6886_patch() {
 	fi
 }
 
-setup_X6886() {
+setup_X6858() {
 	local root
 	root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../../.." && pwd) || return 1
 
@@ -69,15 +69,25 @@ setup_X6886() {
 	fetch_mt6789_common_repo "$root" || return 1
 
 	# Patches
-	apply_X6886_patch "$root/bootable/recovery" \
-		"$root/device/infinix/Infinix-X6886/patches/0001-Change-haptics-activation-file-path.patch" || return 1
-	apply_X6886_patch "$root/bootable/recovery" \
+	apply_X6858_patch "$root/bootable/recovery" \
+		"$root/device/infinix/Infinix-X6858/patches/0001-Change-haptics-activation-file-path.patch" || return 1
+	apply_X6858_patch "$root/bootable/recovery" \
 		"$root/device/transsion/mt6789-common/patches/0003-Refresh-removable-partitions-after-uevent.patch" || return 1
-	apply_X6886_patch "$root/bootable/recovery" \
+	apply_X6858_patch "$root/bootable/recovery" \
 		"$root/device/transsion/mt6789-common/patches/0002-Respect-disabled-repacking.patch" || return 1
-	apply_X6886_patch "$root/build/make" \
+	apply_X6858_patch "$root/build/make" \
 		"$root/device/transsion/mt6789-common/patches/0001-Add-zstd-ramdisk-compression.patch" || return 1
+
+	# Touch: the stock adaptive-ts module skips probing in recovery.
+	local touch_ko="$root/device/infinix/Infinix-X6858/recovery/root/lib/modules/adaptive-ts.ko"
+	if [ -e "$touch_ko" ]; then
+		if python3 "$root/device/infinix/Infinix-X6858/tools/patch_adaptive_ts_ko.py" --check "$touch_ko" >/dev/null 2>&1; then
+			echo "Already patched: adaptive-ts.ko"
+		else
+			python3 "$root/device/infinix/Infinix-X6858/tools/patch_adaptive_ts_ko.py" "$touch_ko" || return 1
+		fi
+	fi
 	echo "OK: All patched"
 }
 
-setup_X6886
+setup_X6858

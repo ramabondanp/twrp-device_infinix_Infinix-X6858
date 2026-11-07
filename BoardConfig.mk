@@ -4,17 +4,17 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/Infinix-X6886
+DEVICE_PATH := device/infinix/Infinix-X6858
 
 # Inherit from mt6789-common
 include device/transsion/mt6789-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := Infinix-X6886
+TARGET_OTA_ASSERT_DEVICE := Infinix-X6858
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_Infinix-X6886
-TARGET_RECOVERY_DEVICE_MODULES += libinit_Infinix-X6886
+TARGET_INIT_VENDOR_LIB := libinit_Infinix-X6858
+TARGET_RECOVERY_DEVICE_MODULES += libinit_Infinix-X6858
 
 # TWRP Configs
-TW_DEVICE_VERSION := X6886_by_rama982
+TW_DEVICE_VERSION := X6858_by_rama982

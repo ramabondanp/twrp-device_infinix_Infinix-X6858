@@ -3,7 +3,7 @@ From: Rama Bondan Prakoso <ramanarubp@gmail.com>
 Date: Tue, 3 Nov 2026 15:20:00 +0000
 Subject: [PATCH] Haptics: probe vibrator_single, vibrator and brightness
 
-X6886 has no timed_output node. Depending on the haptic driver version the
+X6858 has no timed_output node. Depending on the haptic driver version the
 LED classdev is either vibrator_single (AWINIC aw862xx) or vibrator with a
 duration/activate pair, while MTK regulator-vibrator only exposes brightness.
 Probe all of them before falling back to evdev force feedback.
