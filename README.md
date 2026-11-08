@@ -14,7 +14,7 @@ Unofficial TWRP 16.0 recovery for the Infinix NOTE 50.
 | Codename | `Infinix-X6858` |
 | SoC | MediaTek Helio G100 Ultimate (MT6789) |
 | Haptics | MTK regulator-vibrator |
-| Display | AMOLED, 712x1600, 144Hz, 480 dpi |
+| Display | AMOLED, 1080x2436, 144Hz, 480 dpi |
 | Partition layout | Virtual A/B with dynamic partitions |
 | Recovery image | `vendor_boot.img` |
 | Development branch | `twrp-16.0-tos16` |
