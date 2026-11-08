@@ -7,20 +7,23 @@ X6858 has no timed_output node. Depending on the haptic driver version the
 LED classdev is either vibrator_single (AWINIC aw862xx) or vibrator with a
 duration/activate pair, while MTK regulator-vibrator only exposes brightness.
 Probe all of them before falling back to evdev force feedback.
+
+Adapted to the TWRP 16.0 twrpminui/haptics.cpp layout, where the haptics
+code moved out of twrpminui/events.cpp.
 ---
-diff --git a/twrpminui/events.cpp b/twrpminui/events.cpp
-index b98d4cd..0d34257 100644
---- a/twrpminui/events.cpp
-+++ b/twrpminui/events.cpp
+diff --git a/twrpminui/haptics.cpp b/twrpminui/haptics.cpp
+index 1469fe7..6ac50ec 100644
+--- a/twrpminui/haptics.cpp
++++ b/twrpminui/haptics.cpp
 @@ -33,6 +33,7 @@
  #include <string.h>
  #include <fstream>
  #include <mutex>
 +#include <thread>
+ #include <atomic>
  #include "force_feedback.h"
  #ifdef USE_QTI_AIDL_HAPTICS_FIX_OFF
- #include <thread>
-@@ -72,6 +73,9 @@ static std::atomic_int vib_on_count = 0;
+@@ -69,6 +70,9 @@ static std::atomic_int vib_on_count = 0;
  
  #define LEDS_HAPTICS_DURATION_FILE	"/sys/class/leds/vibrator/duration"
  #define LEDS_HAPTICS_ACTIVATE_FILE	"/sys/class/leds/vibrator/activate"
@@ -28,9 +31,9 @@ index b98d4cd..0d34257 100644
 +#define LEDS_HAPTICS_SINGLE_ACTIVATE_FILE	"/sys/class/leds/vibrator_single/activate"
 +#define LEDS_HAPTICS_BRIGHTNESS_FILE	"/sys/class/leds/vibrator/brightness"
  
- #ifndef SYN_REPORT
- #define SYN_REPORT          0x00
-@@ -270,11 +274,22 @@ int vibrate(int timeout_ms)
+ static int write_to_file(const std::string& fn, const std::string& line) {
+ 	FILE *file;
+@@ -138,11 +142,22 @@ int vibrate(int timeout_ms)
          write_to_file(VIBRATOR_TIMEOUT_FILE, tout);
      }
  #else
@@ -54,7 +57,7 @@ index b98d4cd..0d34257 100644
      } else {
          return twrpminui::play_force_feedback(timeout_ms);
      }
-@@ -299,8 +314,10 @@ int haptics_available()
+@@ -167,7 +182,9 @@ int haptics_available()
      return access(VIBRATOR_TIMEOUT_FILE, W_OK) == 0;
  #else
      return twrpminui::force_feedback_available() ||
@@ -65,4 +68,5 @@ index b98d4cd..0d34257 100644
 +           access(LEDS_HAPTICS_BRIGHTNESS_FILE, W_OK) == 0;
  #endif
  }
- 
+-- 
+2.43.0
