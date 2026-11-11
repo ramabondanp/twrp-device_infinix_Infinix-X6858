@@ -24,15 +24,15 @@ Unofficial TWRP 16.0 recovery for the Infinix NOTE 50.
 ## Port status
 
 This tree is ported from the X6886 TWRP tree and uses the stock X6858
-payload for kernel modules and firmware. The build is verified; hardware
-validation on an X6858 is still required.
+payload for kernel modules and firmware. The build and the features below
+are hardware-confirmed on an X6858.
 
-Expected recovery features to validate:
+Hardware-confirmed features:
 
 - Recovery boot
 - Touchscreen
 - Vibration
-- USB OTG, including hotplug
+- USB OTG, including hotplug and multi-partition drives
 - FBE decryption
 - Battery and charging status
 - ADB and ADB sideload

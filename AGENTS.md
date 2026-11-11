@@ -113,13 +113,15 @@ that is missing from the new platform ramdisk.
    - rebuild and inspect the ramdisk with `unpack_bootimg`.
 8. Never mix modules from different firmware/kernel builds.
 
-## Known validation gaps
+## Hardware-confirmed features
 
-The following still require X6858 hardware testing:
+The following are confirmed on an X6858:
 
-- Touch panel bring-up with the patched `adaptive-ts.ko` / `gt9916_common.ko`
+- Recovery boot and touch panel bring-up with the patched `adaptive-ts.ko` / `gt9916_common.ko`
 - Haptics/vibration
 - Charging and battery reporting
 - FBE decryption
-- USB OTG hotplug
-- Fastbootd and slot switching
+- USB OTG hotplug, including multi-partition drives
+- ADB and ADB sideload
+- Fastbootd and A/B slot switching
+- Normal Android boot
